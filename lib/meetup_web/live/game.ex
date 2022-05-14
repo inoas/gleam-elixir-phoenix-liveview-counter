@@ -2,16 +2,11 @@ defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, gleam_store: :game.create_store())}
+    {:ok, assign(socket, gleam_store: :gleam_game.create_store())}
   end
 
-  def handle_event("decrement", _data, socket) do
-    gleam_store = socket.assigns.gleam_store |> :game.update("decrement")
-    {:noreply, assign(socket, gleam_store: gleam_store)}
-  end
-
-  def handle_event("increment", _data, socket) do
-    gleam_store = socket.assigns.gleam_store |> :game.update("increment")
+  def handle_event(action, _data, socket) do
+    gleam_store = socket.assigns.gleam_store |> :gleam_game.update(action |> String.to_atom())
     {:noreply, assign(socket, gleam_store: gleam_store)}
   end
 
