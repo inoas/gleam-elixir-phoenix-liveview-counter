@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")" && cd ../..
+
+echo "Clearing build caches..." &&
+	echo "$ rm -rf _build/" &&
+	rm -rf _build/ &&
+	echo "$ rm -rf .elixir_ls" &&
+	rm -rf .elixir_ls &&
+	echo "...done!" &&
+	exit

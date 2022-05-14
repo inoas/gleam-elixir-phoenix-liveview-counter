@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")" && cd ../..
+
+echo "Testing..." &&
+	echo "$ mix test.interactive" &&
+	mix test.interactive &&
+	exit

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")" && cd ../..
+
+echo "$ mix deps.get && iex -S mix phx.server" &&
+	mix deps.get &&
+	iex -S mix phx.server &&
+	exit

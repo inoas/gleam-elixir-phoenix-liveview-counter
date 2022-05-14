@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")" && cd ../..
+
+echo "Clearing caches..." &&
+	echo "$ rm -rf ~/.cache/rebar" &&
+	rm -rf ~/.cache/rebar &&
+	echo "$ rm -rf ~/.cache/rebar3" &&
+	rm -rf ~/.cache/rebar3 &&
+	echo "$ rm -rf ~/.mix/rebar" &&
+	rm -rf ~/.mix/rebar &&
+	echo "$ rm -rf ~/.mix/rebar3" &&
+	rm -rf ~/.mix/rebar3 &&
+	echo "$ rm -rf _build/" &&
+	rm -rf _build/ &&
+	echo "$ rm -rf deps/" &&
+	rm -rf deps/ &&
+	echo "$ mix local.rebar --force" &&
+	mix local.rebar --force &&
+	echo "$ mix local.hex --force" &&
+	mix local.hex --force &&
+	echo "$ rm -rf .elixir_ls" &&
+	rm -rf .elixir_ls &&
+	echo "...done!" &&
+	exit
