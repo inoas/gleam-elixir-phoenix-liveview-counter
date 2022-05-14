@@ -8,23 +8,19 @@
     <%= live_title_tag assigns[:page_title] || "Meetup", suffix: " · Phoenix Framework" %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header>
-      <section class="container">
-        <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
+  <body class="bg-slate-800">
+    <header class="bg-slate-800 text-white">
+      <h1 class="container mx-auto py-16 text-2xl">
+        Gleam &amp; Elixir Demo<br/>
+        <small>for Elixir Meetup Rhein Main Meetup</small>
+      </h1>
     </header>
-    <%= @inner_content %>
+    <main class="bg-slate-100 text-black">
+      <%= @inner_content %>
+    </main>
+    <footer class="bg-slate-800 text-white">
+    </footer>
   </body>
 </html>
