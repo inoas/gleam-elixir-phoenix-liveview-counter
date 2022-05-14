@@ -1,4 +1,4 @@
-defmodule MeetupWeb.GuessGame do
+defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do

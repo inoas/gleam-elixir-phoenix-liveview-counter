@@ -17,9 +17,9 @@ defmodule MeetupWeb.Router do
   scope "/", MeetupWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
 
-    live "/guess-game", GuessGame
+    live "/", Game
   end
 
   # Other scopes may use custom stacks.
