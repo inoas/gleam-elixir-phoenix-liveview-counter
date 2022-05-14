@@ -52,6 +52,7 @@ defmodule Meetup.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:gleam_stdlib, "~> 0.18"},
+      # {:gleam_otp, "~> 0.4.0"},
       {:gleeunit, "~> 0.5", [only: [:dev, :test], runtime: false]}
     ]
   end
