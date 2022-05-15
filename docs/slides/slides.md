@@ -18,7 +18,7 @@ Briefly about me:
 ### Picking new technologies
 
 - For the mobile app I picked Dart/Flutter as the frontend technology.
-  - Nowadays one could try <https://github.com/elixir-desktop/desktop> (Elixir-Desktop), which let's you run Elixir code on iOS/Android as well as Mac, Linux and Windows.
+  - Nowadays one could try <https://github.com/elixir-desktop/desktop> (Elixir-Desktop), which lets you run Elixir code on iOS/Android as well as Mac, Linux and Windows.
 - For the backend I picked Elixir/Phoenix.
 - I had a great time learning both, but I really missed the typing in Elixir/Phoenix while onboarding.
 
@@ -39,7 +39,7 @@ Briefly about me:
 ### Dart/Flutter
 
 - The Dart/Flutter experience was different.
-- Bugs existed as well, but the overall the onboarding was awesome.
+- Bugs existed as well, but the overall onboarding was awesome.
 - Reasons:
   - Flutter was mostly declarative and DOM-like.
   - Flutter/Dart tooling made it rewarding to ***not*** use `dynamic`, but almost always use static typing.
@@ -80,8 +80,8 @@ Briefly about me:
 
 Erlang and Elixir help a lot on following happy paths:
 
-- When resources an application requires are set to be available under usual circumstances, it runs
-- When such resources are temporarily unavailable, some processes crash and restart
+- When resources, an application requires, are set to be available under usual circumstances, it runs.
+- When such resources are temporarily unavailable, some processes crash and restart.
 
 <mdi-arrow-right-thick /> The `good crashes` are handled by well written Beam/OTP apps.
 
@@ -102,7 +102,7 @@ What about the `bad crashes`?
 
 - Erlang community has tried to fix this within and outside of Erlang, see <https://github.com/stars/michallepicki/lists/erlang-and-static-types>.
 - Reason for tools like Dialzyer and to some degree Credo.
-- Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp Team, released into the public about 12 month ago: <https://github.com/WhatsApp/erlt>.
+- Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp-team, released into the public in spring 2021: <https://github.com/WhatsApp/erlt>.
 - Reason for numerous to bring typing to Erlang or write typed languages against the Beam VM such as: Lisp-Flavoured-Erlang, Alpaca, Purerl, Elchemy, Hamler, Caramel and Gleam.
 
 ---
@@ -255,11 +255,11 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 ### The state of matter
 
 - The language is pretty stable:
-  - The main author has stated that they intent to not break any language syntax or core language interfaces.
+  - The main author has stated that they intend to not break any language syntax or core language interfaces.
   - Syntax high-lightning and the first LSP is available.
   - Github officially supports the language.
 - The eco-system needs help, libraries, more developers, and more users:
-  - A lot of things already exists: HTTP1/2 servers, HTTP clients, JSON decoders, Protocol-Buffers, PostgreSQL client, Mustache and Matcha templating and many more.
+  - A lot of things already exist: HTTP1/2 servers, HTTP clients, JSON decoders, Protocol-Buffers, PostgreSQL client, Mustache and Matcha templating and many more.
   - For more see <https://github.com/gleam-lang/awesome-gleam>.
 
 ---

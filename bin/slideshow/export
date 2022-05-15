@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")" && cd ../..
+
+echo "Running slidev..." &&
+	echo "$ cd docs/slides/slidev && npx slidev export --dark && npx slidev export --dark --format png" &&
+	cd docs/slides/slidev &&
+	npx slidev export --dark &&
+	npx slidev export --dark --format png &&
+	echo "...done!" &&
+	exit
