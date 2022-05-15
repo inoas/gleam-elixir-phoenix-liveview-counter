@@ -13,6 +13,8 @@ echo "Clearing caches..." &&
 	rm -rf ~/.mix/rebar3 &&
 	echo "$ rm -rf _build/" &&
 	rm -rf _build/ &&
+	echo "$ rm -rf build/" &&
+	rm -rf build/ &&
 	echo "$ rm -rf deps/" &&
 	rm -rf deps/ &&
 	echo "$ mix local.rebar --force" &&

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-cd "$(dirname "$0")" && cd ../..
-
-echo "Upgrading packages..." &&
-	echo "$ mix deps.update --all" &&
-	mix deps.update --all &&
-	exit

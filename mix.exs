@@ -9,12 +9,14 @@ defmodule Meetup.MixProject do
       app: @app,
       version: @version,
       elixir: "~> 1.13",
+      elixirc_paths: elixirc_paths(Mix.env()),
       name: "#{@app}",
       archives: [mix_gleam: "~> 0.4.0"],
       aliases: MixGleam.add_aliases(),
       erlc_paths: ["build/dev/erlang/#{@app}/build"],
       erlc_include_path: "build/dev/erlang/#{@app}/include",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
     ]
   end
