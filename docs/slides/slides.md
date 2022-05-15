@@ -95,8 +95,8 @@ What about the `bad crashes`?
 ### Types to the rescue
 
 - Erlang community has tried to fix this within and outside of Erlang, see <https://github.com/stars/michallepicki/lists/erlang-and-static-types>.
-- Reason for tools like Dialzyer and to some degree Credo
-- Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp Team, released into the public about 12 month ago: <https://github.com/WhatsApp/erlt>
+- Reason for tools like Dialzyer and to some degree Credo.
+- Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp Team, released into the public about 12 month ago: <https://github.com/WhatsApp/erlt>.
 - Reason for numerous to bring typing to Erlang or write typed languages against the Beam VM such as: Lisp-Flavoured-Erlang, Alpaca, Hamler, Purerl, Elchemy and Gleam.
 
 ---
@@ -224,8 +224,19 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ## Closing Words/3
 
+### Thanks and shout-outs
+
+- Joe & Team for creating Erlang
+- José & Chris for creating Elixir, Phoenix & LiveView
+- Louis for creating Gleam
+- The Gleam community and especially *michallepicki*, *rattard* and *HarryET* for helping out.
+
+---
+
+## Closing Words/4
+
 ### Become shiny
 
 **So in short: Gleam needs you, Gleam wants you :).**
 
-**The Gleam community is very friendly, and not snobbish at all and welcomes developers of all trades and levels: <https://discord.gg/twY7ZhKTM3> and <https://github.com/gleam-lang/gleam/discussions> and <https://gleam.run>.**
+**The Gleam community is very friendly, not snobbish at all, and welcomes developers of all trades and levels: <https://discord.gg/twY7ZhKTM3> and <https://github.com/gleam-lang/gleam/discussions> and <https://gleam.run>.**
