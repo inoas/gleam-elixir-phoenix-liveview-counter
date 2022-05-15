@@ -1,15 +1,14 @@
 ---
 theme: unicorn
 ---
-# Gleam on Beam
-
-## Elixir's safe escape hatch
+# Gleam on Beam: Elixir's safe escape hatch
 
 Briefly about me:
 
 - Full Stack Dev.
-- Long time background is PHP.
-- When moving from PHP, I have tried a bunch of technologies, which included creating mobile apps for iOS and Android.
+- Long time background is PHP <mdi-emoticon-neutral /> & CakePHP <mdi-emoticon />.
+- Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib/> <mdi-emoticon-excited />.
+- When moving from PHP, I have tried a bunch of technologies, which included picking Phoenix and Flutter for creating mobile apps for iOS/Android.
 
 ---
 
@@ -30,7 +29,7 @@ Briefly about me:
 
 - The first iterations of the backend/API (Phoenix) some runtime match errors sneaking into staging.
 - Errors were due to using pattern matching and not enough `with` or change sets for validation.
-- I simply happen to 'let it crash', unreasonably.
+- I simply happen to *"let it crash"* - unreasonably though.
 
 ---
 
@@ -60,7 +59,7 @@ Briefly about me:
 
 ## Story/5
 
-## "Let it crash!"
+### "Let it crash!"
 
 1. `Bad crashes`: Application errors happen at runtime and we just do not handle them. When taking over larger Phoenix projects I have for instance seen a lot of `(MatchError) no match of right hand side value` in Sentry.io logs.
 2. `Good crashes`: A failing process does not need to kill the system. This also allows for self healing where certain networked resources are not available briefly. On the BEAM without global state and objects we can more or less safely just crash and restart processes.
@@ -71,18 +70,23 @@ Obviously crashes are never good ;-)
 
 ## Story/6
 
-## "Lessons learned!"
+### "Lessons learned!"
 
-- Erlang and Elixir help a lot on following happy paths
-  - When resources an application requires are set to be available under usual circumstances, it runs
-  - When such resources are temporarily unavailable, some processes crash and restart
-  - <mdi-arrow-right-thick /> The `good crashes` are handled by well written Beam/OTP apps.
-- What about the `bad crashes`?
-  - A lot of runtime errors can occur that have nothing to do at all with unexpected errors.
-  - Change sets or other forms of input validation help.
-  - Type specs, and schemata such as Json-Schema, XML-Schema/XSD, GraphQL help.
-  - Unit tests help.
-  - <mdi-arrow-right-thick /> Static typing can help to avoid many of these bad crashes
+Erlang and Elixir help a lot on following happy paths:
+
+- When resources an application requires are set to be available under usual circumstances, it runs
+- When such resources are temporarily unavailable, some processes crash and restart
+
+<mdi-arrow-right-thick /> The `good crashes` are handled by well written Beam/OTP apps.
+
+What about the `bad crashes`?
+
+- A lot of runtime errors can occur that have nothing to do at all with unexpected errors.
+- Change sets or other forms of input validation help.
+- Type specs, and schemata such as Json-Schema, XML-Schema/XSD, GraphQL help.
+- Unit tests help.
+
+<mdi-arrow-right-thick /> Static typing can help to avoid many of these bad crashes
 
 ---
 
@@ -125,7 +129,7 @@ Obviously crashes are never good ;-)
 
 ## Gleam/3
 
-With all that being said, let's dive in a bit!
+**With all that being said, let's dive in a bit!**
 
 ---
 
@@ -133,14 +137,14 @@ With all that being said, let's dive in a bit!
 
 ### Demo time
 
-Demo and this talk in this repo <https://github.com/inoas/gleam-elixir-phoenix-liveview-counter/>.
+Demo and this talk in available here: <https://github.com/inoas/gleam-elixir-phoenix-liveview-counter/>.
 
 Run at home? Make you have got Erlang, Elixir, Gleam and Rebar installed. See below for some instructions.
 
 Run via:
 
 ```sh
-bin/dev/run
+bin/dev/run && open http://localhost:4000/
 ```
 
 Run the slides via:
@@ -148,6 +152,11 @@ Run the slides via:
 ```sh
 bin/dev/slides && open http://localhost:3030
 ```
+
+&nbsp;
+### Demo link
+
+<mdi-arrow-right-thick /> <http://localhost:4000/>
 
 ---
 
@@ -178,9 +187,9 @@ bin/dev/slides && open http://localhost:3030
 
 ### Playtime
 
-- Toying around together on <https://johndoneth.github.io/gleam-playground/>
+- Toying around together on <https://johndoneth.github.io/gleam-playground/>.
 - Caveat: Only one module, no dependencies except gleam's included prelude and `gleam_stdlib`.
-- Going through examples found here: <https://gleam.run/book/tour/>
+- Going through some examples found here: <https://gleam.run/book/tour/>.
 
 ---
 
@@ -201,6 +210,8 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ## Closing Words/2
 
+### The state of matter
+
 - The language is pretty stable.
 - The main author has stated that they intent to not break any language syntax or core language interfaces
 - The eco-system needs help, libraries, more developers and more users
@@ -208,6 +219,12 @@ To my knowledge the main author certainly thinks so. People are using it in prod
   - including JSON-Decoders, support for Protocol-Buffers, HTTP1/2 servers
 - websocket support is being worked on
 - For more See <https://github.com/gleam-lang/awesome-gleam>.
+
+---
+
+## Closing Words/3
+
+### Become shiny
 
 **So in short: Gleam needs you, Gleam wants you :).**
 
