@@ -5,7 +5,8 @@ theme: unicorn
 
 Briefly about me:
 
-- Full Stack Dev.
+- Diploma degree in Sociology.
+- Full Stack Dev since 1997/2001.
 - Long time background is PHP <mdi-emoticon-neutral /> & CakePHP <mdi-emoticon />.
 - Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib/> <mdi-emoticon-excited />.
 - When moving from PHP, I have tried a bunch of technologies, which included picking Phoenix and Flutter for creating mobile apps for iOS/Android.
@@ -19,7 +20,7 @@ Briefly about me:
 - For the mobile app I picked Dart/Flutter as the frontend technology.
   - Nowadays one could try <https://github.com/elixir-desktop/desktop> (Elixir-Desktop), which let's you run Elixir code on iOS/Android as well as Mac, Linux and Windows.
 - For the backend I picked Elixir/Phoenix.
-- I had a great time learning both but I really missed the typing in Elixir/Phoenix while onboarding onto both.
+- I had a great time learning both, but I really missed the typing in Elixir/Phoenix while onboarding.
 
 ---
 
@@ -38,10 +39,11 @@ Briefly about me:
 ### Dart/Flutter
 
 - The Dart/Flutter experience was different.
-- Bugs existed as well but the overall the onboarding was awesome
+- Bugs existed as well, but the overall the onboarding was awesome.
 - Reasons:
-  - Flutter was mostly declarative and DOM-like
-  - Flutter/Dart tooling made it rewarding to not just use `dynamic` but almost always use explicit static typing. Why?
+  - Flutter was mostly declarative and DOM-like.
+  - Flutter/Dart tooling made it rewarding to not just use `dynamic` but almost always use explicit static typing.
+  - Why? <mdi-arrow-right />
 
 ---
 
@@ -49,9 +51,9 @@ Briefly about me:
 
 ### DX benefits of static typing
 
-- The IDE (vscode) showed type hints right away
-- Without any delay (like the Elixir typing with type specs and Dialiyzer)
-- The IDE offered up options to pick and function documentation alongside when moving through the vast amounts of Flutter build-in types/components to compose the application off.
+- The IDE (vscode) showed type hints right away.
+- Without any delay (like in Elixir with ElixirLS, type specs and Dialiyzer).
+- The IDE offered options to pick and function documentation alongside when moving through the vast amounts of Flutter build-in types/components to compose the application of.
 
 <mdi-arrow-right-thick /> Dart has its culprits but I clearly missed that kind of type safety and DX in Elixir/Phoenix.
 
@@ -61,10 +63,14 @@ Briefly about me:
 
 ### "Let it crash!"
 
-1. `Bad crashes`: Application errors happen at runtime and we just do not handle them. When taking over larger Phoenix projects I have for instance seen a lot of `(MatchError) no match of right hand side value` in Sentry.io logs.
-2. `Good crashes`: A failing process does not need to kill the system. This also allows for self healing where certain networked resources are not available briefly. On the BEAM without global state and objects we can more or less safely just crash and restart processes.
+1. `Bad crashes`: Application errors happen at runtime and we just do not handle them.
+   - When taking over larger Phoenix projects I have for instance seen a lot of `(MatchError) no match of right hand side value` in Sentry.io logs.
+2. `Good crashes`: A failing process does not need to kill the system. This also allows for self healing where certain networked resources are not available briefly.
+   - On the BEAM without global state and objects we can more or less safely just crash and restart processes.
 
-Obviously crashes are never good ;-)
+&nbsp;
+
+<sub>Disclaimer: Obviously crashes are *NEVER* good! <mdi-emoticon-poop /></sub>
 
 ---
 
