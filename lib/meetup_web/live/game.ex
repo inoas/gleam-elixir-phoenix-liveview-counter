@@ -2,13 +2,8 @@ defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do
-    # non-OTP part
-    gleam_store = :gleam_app.create_store(2)
-    socket = assign(socket, gleam_store: gleam_store)
-    # OTP part
-    process = :gleam_app.start_process()
-    # :gleam_app.send_message(process, {:foo, :bar, :quux, :batz})
-    socket = assign(socket, gleam_process: process)
+    socket = assign(socket, gleam_store: :gleam_app.create_store(2))
+    socket = assign(socket, gleam_process: :gleam_app.start_process())
     {:ok, socket}
   end
 
