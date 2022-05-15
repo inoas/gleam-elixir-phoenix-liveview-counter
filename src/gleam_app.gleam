@@ -19,17 +19,17 @@ pub fn start_process(state) {
 }
 
 fn handle_message(message, state) {
-  io.debug("The actor got a message: ")
-  io.debug(message)
+  // io.debug("The actor got a message: ")
+  // io.debug(message)
   process.send(message.reply_channel, state)
   actor.Continue(state)
 }
 
+// non-OTP part:
 pub fn create_store(step: Int) -> Counter {
   counter.new(step)
 }
 
-// non-OTP part:
 pub type Action {
   Increment
   Decrement

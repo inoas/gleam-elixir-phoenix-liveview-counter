@@ -6,8 +6,8 @@ defmodule MeetupWeb.Game do
     gleam_store = :gleam_app.create_store(2)
     socket = assign(socket, gleam_store: gleam_store)
     # OTP part
-    {:sender, gleam_process_pid, _details} = :gleam_app.start_otp(gleam_store)
-    # IO.inspect(details)
+    {:sender, gleam_process_pid, details} = :gleam_app.start_process(gleam_store)
+    IO.inspect(details)
     # Send test #1
     send(gleam_process_pid, {:gleam_process, :increment})
     socket = assign(socket, gleam_process_pid: gleam_process_pid)
