@@ -34,7 +34,7 @@ defmodule MeetupWeb.Game do
   def render(assigns) do
     ~H"""
     <div class="container mx-auto py-16 pb-24 text-2xl">
-      <h2 class="text-center pb-3 select-none">Counter</h2>
+      <h2 class="text-center pb-3 select-none [text-shadow:0_2px_3px_rgba(0,0,0,.2)] font-medium">Counter</h2>
       <div class="mx-auto rounded-full bg-gradient-to-b from-indigo-500 via-purple-800 to-pink-500 w-32 h-32 flex items-center justify-center text-white font-bold text-3xl drop-shadow-md select-none [text-shadow:0_2px_4px_rgba(0,0,0,.67)] border-2 border border-indigo-400">
         <%= :gleam_app.get_counter_value(@gleam_store) %>
       </div>
