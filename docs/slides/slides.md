@@ -225,22 +225,22 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 - The language is pretty stable.
 - The main author has stated that they intent to not break any language syntax or core language interfaces
-- The eco-system needs help, libraries, more developers and more users
+- The eco-system needs help, libraries, more developers and more users.
 - There is already a lot of it out there, including:
-  - including JSON-Decoders, support for Protocol-Buffers, HTTP1/2 servers
-- websocket support is being worked on
-- For more See <https://github.com/gleam-lang/awesome-gleam>.
+  - HTTP1/2 servers, JSON decoders, Protocol buffers, PostgreSQL client, and many more
+- Websocket support is being worked on
+- For more see <https://github.com/gleam-lang/awesome-gleam>.
 
 ---
 
 ## Closing words/3
 
-### Thanks and shout-outs
+### Thanks & shout-outs
 
-- Joe & Team for creating Erlang
-- José & Chris for creating Elixir, Phoenix & LiveView
-- Louis for creating Gleam
-- The Gleam community and especially *michallepicki*, *rattard* and *HarryET* for helping out.
+- Joe & Team for creating Erlang!
+- José & Chris for creating Elixir, Phoenix & LiveView!
+- Louis for creating Gleam!
+- The Gleam community and especially *michallepicki*, *rattard* and *HarryET* for helping out!
 
 ---
 
