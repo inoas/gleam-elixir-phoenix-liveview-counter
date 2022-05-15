@@ -3,9 +3,9 @@ pub opaque type Counter {
 }
 
 pub fn new(step: Int) -> Counter {
-  case step {
-    _ if step <= 0 -> Counter(step: 1, value: 0)
-    _ -> Counter(step: step, value: 0)
+  case step <= 0 {
+    True -> Counter(step: 1, value: 0)
+    False -> Counter(step: step, value: 0)
   }
 }
 
@@ -14,10 +14,10 @@ pub fn increment(counter: Counter) -> Counter {
 }
 
 pub fn decrement(counter: Counter) -> Counter {
-  let new_value = counter.value - counter.step
-  case new_value {
-    _ if new_value < 0 -> Counter(..counter, value: 0)
-    _ -> Counter(..counter, value: new_value)
+  let next_value = counter.value - counter.step
+  case next_value < 0 {
+    True -> Counter(..counter, value: 0)
+    False -> Counter(..counter, value: next_value)
   }
 }
 
