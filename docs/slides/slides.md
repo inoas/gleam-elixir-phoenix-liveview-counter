@@ -8,7 +8,7 @@ Briefly about me:
 - Diploma degree in Sociology.
 - Full Stack Dev since 1997/2001.
 - Long time background is PHP <mdi-emoticon-neutral /> & CakePHP <mdi-emoticon />.
-- Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib/> <mdi-emoticon-excited />.
+- Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib> <mdi-emoticon-excited />.
 - When moving from PHP, I have tried a bunch of technologies, which included picking Phoenix and Flutter for creating mobile apps for iOS/Android.
 
 ---
@@ -29,7 +29,7 @@ Briefly about me:
 ### First experiences
 
 - The first iterations of the backend/API (Phoenix) some runtime match errors sneaking into staging.
-- Errors were due to using pattern matching and not enough `with` or change sets for validation.
+- Errors were due to using pattern matching and not enough `with` or change-sets for validation.
 - I simply happen to *"let it crash"* - unreasonably though.
 
 ---
@@ -42,7 +42,7 @@ Briefly about me:
 - Bugs existed as well, but the overall the onboarding was awesome.
 - Reasons:
   - Flutter was mostly declarative and DOM-like.
-  - Flutter/Dart tooling made it rewarding to not just use `dynamic` but almost always use explicit static typing.
+  - Flutter/Dart tooling made it rewarding to ***not*** use `dynamic`, but almost always use static typing.
   - Why? <mdi-arrow-right />
 
 ---
@@ -88,7 +88,7 @@ Erlang and Elixir help a lot on following happy paths:
 What about the `bad crashes`?
 
 - A lot of runtime errors can occur that have nothing to do at all with unexpected errors.
-- Change sets or other forms of input validation help.
+- Change-sets or other forms of input validation help.
 - Type specs, and schemata such as Json-Schema, XML-Schema/XSD, GraphQL help.
 - Unit tests help.
 
@@ -128,6 +128,7 @@ What about the `bad crashes`?
    - Not every feature one could think of or desire is implemented.
    - The language interface/surface is being kept small for this reason.
    - It should be easy to pick up.
+   - Powerful type inference to get started or for the lazy (appears if types are optional or dynamic).
 2. Compiles to targets Erlang and JavaScript.
    - Once there is more financial support the main developer would like to add C/native as a compile target.
 3. The compiler is written in Rust:
@@ -147,7 +148,7 @@ What about the `bad crashes`?
 
 ### Demo time
 
-Demo and this talk in available here: <https://github.com/inoas/gleam-elixir-phoenix-liveview-counter/>.
+Demo and this talk in available here: <https://github.com/inoas/gleam-elixir-phoenix-liveview-counter>.
 
 Run at home? Make you have got Erlang, Elixir, Gleam and Rebar installed. See below for some instructions.
 
@@ -197,9 +198,9 @@ bin/dev/slides && open http://localhost:3030
 
 ### Playtime
 
-- Toying around together on <https://johndoneth.github.io/gleam-playground/>.
+- Toying around together on <https://johndoneth.github.io/gleam-playground>.
 - Caveat: Only one module, no dependencies except gleam's included prelude and `gleam_stdlib`.
-- Going through some examples found here: <https://gleam.run/book/tour/>.
+- Going through some examples found here: <https://gleam.run/book/tour>.
 
 ---
 
