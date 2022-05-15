@@ -1,4 +1,3 @@
-// import gleam/io
 pub opaque type Counter {
   Counter(step: Int, value: Int)
 }
@@ -10,11 +9,15 @@ pub fn new(step: Int) -> Counter {
   }
 }
 
-pub fn set_value(counter: Counter, value: Int) -> Counter {
-  // io.debug(value)
-  case value {
-    value if value < 0 -> Counter(..counter, value: 0)
-    value -> Counter(..counter, value: value)
+pub fn increment(counter: Counter) -> Counter {
+  Counter(..counter, value: counter.value + counter.step)
+}
+
+pub fn decrement(counter: Counter) -> Counter {
+  let new_value = counter.value - counter.step
+  case new_value {
+    new_value if new_value < 0 -> Counter(..counter, value: 0)
+    new_value -> Counter(..counter, value: new_value)
   }
 }
 

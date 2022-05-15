@@ -41,10 +41,10 @@ pub fn update(counter: Counter, message: Action) -> Counter {
   case message {
     Increment ->
       counter
-      |> counter.set_value(counter.get_value(counter) + 1)
+      |> counter.increment
     Decrement ->
       counter
-      |> counter.set_value(counter.get_value(counter) - 1)
+      |> counter.decrement
   }
 }
 

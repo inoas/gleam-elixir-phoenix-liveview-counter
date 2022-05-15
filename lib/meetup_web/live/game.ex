@@ -3,7 +3,7 @@ defmodule MeetupWeb.Game do
 
   def mount(_params, _session, socket) do
     # non-OTP part
-    gleam_store = :gleam_app.create_store(1)
+    gleam_store = :gleam_app.create_store(2)
     socket = assign(socket, gleam_store: gleam_store)
     # OTP part
     {:sender, gleam_otp_pid, details} = :gleam_app.start_otp(gleam_store)
