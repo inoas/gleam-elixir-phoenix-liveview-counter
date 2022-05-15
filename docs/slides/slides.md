@@ -123,7 +123,7 @@ What about the `bad crashes`?
 ### What sets Gleam apart
 
 1. Average developer happiness matters:
-   - Gleam language development: Great care to not add to much to a languages' *strangeness-budget*.
+   - The Gleam language is developed with great care to not add to much to a languages' *strangeness-budget*.
    - Syntax appears to be familiar to JavaScript.
    - Not every feature one could think of or desire is implemented.
    - The language interface/surface is being kept small for this reason.
