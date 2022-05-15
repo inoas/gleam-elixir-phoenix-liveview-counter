@@ -2,14 +2,29 @@ defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, gleam_store: :gleam_app.create_store(1))}
+    # non-OTP part
+    gleam_store = :gleam_app.create_store(1)
+    socket = assign(socket, gleam_store: gleam_store)
+    # OTP part
+    {:sender, gleam_otp_pid, details} = :gleam_app.start_otp(gleam_store)
+    IO.inspect(details)
+    # Send test #1
+    send(gleam_otp_pid, {:gleam_otp, :increment})
+    socket = assign(socket, gleam_otp_pid: gleam_otp_pid)
+    # Send test #2
+    send(socket.assigns.gleam_otp_pid, {:gleam_otp, :increment})
+    {:ok, socket}
   end
 
   def handle_event(action, _data, socket) do
     actions = Enum.map(:gleam_app.actions(), &Atom.to_string(&1))
 
     if action in actions do
-      gleam_store = :gleam_app.update(socket.assigns.gleam_store, String.to_atom(action))
+      # non-OTP part
+      action = String.to_atom(action)
+      gleam_store = :gleam_app.update(socket.assigns.gleam_store, action)
+      # OTP part
+      send(socket.assigns.gleam_otp_pid, {:gleam_otp, action})
       {:noreply, assign(socket, gleam_store: gleam_store)}
     end
   end
