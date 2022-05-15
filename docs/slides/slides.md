@@ -109,6 +109,20 @@ What about the `bad crashes`?
 
 ## Gleam/1
 
+<style>
+img {
+  max-width: 30vw;
+  max-height: 30vh;
+}
+</style>
+
+<img src="/star-history.png" class="rounded drop-shadow-2xl" />
+
+Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lang/alpaca&hamler-lang/hamler&wende/elchemy&purerl/purerl&AbstractMachinesLab/caramel&lfe/lfe&bragful/ephp&rvirding/luerl).
+---
+
+## Gleam/2
+
 ### What Gleam avoids
 
 1. Great care around simplicity and DX
@@ -118,7 +132,7 @@ What about the `bad crashes`?
 
 ---
 
-## Gleam/2
+## Gleam/3
 
 ### What sets Gleam apart
 
@@ -138,13 +152,13 @@ What about the `bad crashes`?
 
 ---
 
-## Gleam/3
+## Gleam/4
 
 **With all that being said, let's dive in a bit!**
 
 ---
 
-## Gleam/4
+## Gleam/5
 
 ### Demo time
 
@@ -171,7 +185,7 @@ bin/dev/slides && open http://localhost:3030
 
 ---
 
-## Gleam/5
+## Gleam/6
 
 ### How to install gleam
 
@@ -194,7 +208,7 @@ bin/dev/slides && open http://localhost:3030
 
 ---
 
-## Gleam/6
+## Gleam/7
 
 ### Playtime
 
