@@ -103,7 +103,7 @@ What about the `bad crashes`?
 - Erlang community has tried to fix this within and outside of Erlang, see <https://github.com/stars/michallepicki/lists/erlang-and-static-types>.
 - Reason for tools like Dialzyer and to some degree Credo.
 - Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp Team, released into the public about 12 month ago: <https://github.com/WhatsApp/erlt>.
-- Reason for numerous to bring typing to Erlang or write typed languages against the Beam VM such as: Lisp-Flavoured-Erlang, Alpaca, Hamler, Purerl, Elchemy and Gleam.
+- Reason for numerous to bring typing to Erlang or write typed languages against the Beam VM such as: Lisp-Flavoured-Erlang, Alpaca, Purerl, Elchemy, Hamler, Caramel and Gleam.
 
 ---
 
@@ -112,8 +112,8 @@ What about the `bad crashes`?
 ### What Gleam avoids
 
 1. Great care around simplicity and DX
-   - Many of the attempts to bring typing to the Beam make it hard to pick up for developers not familiar with Lisp, Haskell or Elm.
-   - And let's be honest, compared to JavaScript these are ultra-niche.
+   - Many of the attempts to bring typing to the Beam make it hard to pick up for developers not familiar with say Lisp, Haskell, PureScript, Elm or OCaml.
+   - And let's be honest, compared to say JavaScript these are ultra-niche.
    - So next to immutability and strict typing developers are also forced to know these and/or understand these ultra niche technologies.
 
 ---
@@ -123,13 +123,17 @@ What about the `bad crashes`?
 ### What sets Gleam apart
 
 1. Average developer happiness matters:
-   - Gleam language development: Great care to not add to much to a languages' strangeness-budget.
+   - Gleam language development: Great care to not add to much to a languages' *strangeness-budget*.
+   - Syntax appears to be familiar to JavaScript.
    - Not every feature one could think of or desire is implemented.
-   - The language interface or surface is being kept small for this reason.
+   - The language interface/surface is being kept small for this reason.
    - It should be easy to pick up.
-2. Targets Erlang and Javascript. If there is more financial support the main developer would like to add C/native as a target.
-3. The compiler is written in Rust, while compiling the Gleam compiler takes about 30s to 1minute, compiling gleam is ultra snappy and at the same time yields compile time garantuees.
-4. Interacts with Erlang/OTP or with NodeJS or Deno.
+2. Compiles to targets Erlang and JavaScript.
+   - Once there is more financial support the main developer would like to add C/native as a compile target.
+3. The compiler is written in Rust:
+   - Compiling Gleam is ultra snappy and at the same time yields compile time guarantuees.
+   - Can be compiled via WASM within the browser - Gleam' playground uses this.
+4. Interacts with Erlang/OTP, Browser-Javascript, NodeJS and possibly Deno.
 
 ---
 
