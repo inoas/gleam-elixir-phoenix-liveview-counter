@@ -16,19 +16,34 @@ defmodule MeetupWeb.Game do
     {:ok, socket}
   end
 
-  def handle_event(action, _data, socket) do
+  def handle_event(action, params, socket) do
     expected_actions = Enum.map(:gleam_app.actions(), &Atom.to_string(&1))
 
-    if action in expected_actions do
-      # non-OTP part
-      action = String.to_atom(action)
-      gleam_store = :gleam_app.update(socket.assigns.gleam_store, action)
-      # OTP part
-      send(socket.assigns.gleam_otp_pid, {:gleam_otp, action})
-      {:noreply, assign(socket, gleam_store: gleam_store)}
-    end
-
     # Otherwise: Let it crash!
+    if action in expected_actions do
+      action = String.to_atom(action)
+      do_handle_event(action, params, socket)
+    end
+  end
+
+  def do_handle_event(:set_step, %{"step" => step} = _params, socket) do
+    step =
+      try do
+        step |> String.to_integer()
+      rescue
+        _ -> 1
+      end
+
+    gleam_store = :gleam_app.update(socket.assigns.gleam_store, :set_step, {:some, step})
+    {:noreply, assign(socket, gleam_store: gleam_store)}
+  end
+
+  def do_handle_event(action, _params, socket) do
+    # non-OTP part
+    gleam_store = :gleam_app.update(socket.assigns.gleam_store, action, :none)
+    # OTP part
+    send(socket.assigns.gleam_otp_pid, {:gleam_otp, action})
+    {:noreply, assign(socket, gleam_store: gleam_store)}
   end
 
   def render(assigns) do
@@ -39,10 +54,25 @@ defmodule MeetupWeb.Game do
         <%= :gleam_app.get_counter_value(@gleam_store) %>
       </div>
       <div class="flex gap-2 justify-center pt-4">
-        <button href="#" phx-click="decrement" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
+        <button phx-click="decrement" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
           -
         </button>
-        <button href="#" phx-click="increment" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
+        <form phx-change="set_step">
+          <style type="text/css">
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            /* Firefox */
+            input[type=number] {
+              -moz-appearance: textfield;
+    					caret-color: transparent;
+            }
+          </style>
+          <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" min="1" max="5" step="1" inputmode="numeric" pattern="[1-9][0-9]" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
+        </form>
+        <button phx-click="increment" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
           +
         </button>
       </div>

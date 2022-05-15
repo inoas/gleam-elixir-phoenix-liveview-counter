@@ -1,5 +1,7 @@
 // non-OTP part:
 import counter.{Counter}
+import gleam/option.{Option}
+//
 // OTP part:
 import gleam/io
 import gleam/otp/actor
@@ -31,13 +33,18 @@ pub fn create_store(step: Int) -> Counter {
 pub type Action {
   Increment
   Decrement
+  SetStep
 }
 
 pub fn actions() -> List(Action) {
-  [Increment, Decrement]
+  [Increment, Decrement, SetStep]
 }
 
-pub fn update(counter: Counter, message: Action) -> Counter {
+pub fn update(
+  counter: Counter,
+  message: Action,
+  payload: Option(Int),
+) -> Counter {
   case message {
     Increment ->
       counter
@@ -45,10 +52,18 @@ pub fn update(counter: Counter, message: Action) -> Counter {
     Decrement ->
       counter
       |> counter.decrement
+    SetStep ->
+      counter
+      |> counter.set_step(payload)
   }
 }
 
 pub fn get_counter_value(counter: Counter) -> Int {
   counter
   |> counter.get_value
+}
+
+pub fn get_counter_step(counter: Counter) -> Int {
+  counter
+  |> counter.get_step
 }
