@@ -137,7 +137,7 @@ Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lan
 ### What sets Gleam apart
 
 1. Average developer happiness matters:
-   - The Gleam language is developed with great care to not add to much to a languages' *strangeness-budget*.
+   - The Gleam language is developed with great care limiting the languages' *strangeness-budget*.
    - Syntax appears to be familiar to JavaScript.
    - Not every feature one could think of or desire is implemented.
    - The language interface/surface is being kept small for this reason.
