@@ -1,36 +1,6 @@
-// non-OTP part:
 import counter.{Counter}
 import gleam/option.{Option}
-//
-// OTP part:
-import gleam/io
-import gleam/otp/actor
-import gleam/otp/process.{Sender}
 
-// OTP part:
-pub type Message {
-  Request(reply_channel: Sender(String))
-}
-
-pub fn start_process() {
-  let state = create_store(2)
-  assert Ok(channel) = actor.start(state, handle_message)
-  process.call(channel, Request, 100)
-  channel
-}
-
-fn handle_message(message, state) {
-  io.print("The actor got a message: ")
-  io.debug(message)
-  process.send(message.reply_channel, "Done")
-  actor.Continue(state)
-}
-
-pub fn send_message(channel, message) {
-  actor.send(channel, message)
-}
-
-// non-OTP part:
 pub fn create_store(step: Int) -> Counter {
   counter.new(step)
 }

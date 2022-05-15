@@ -2,14 +2,8 @@ defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do
-    socket = assign(socket, gleam_store: :gleam_app.create_store(2))
-    socket = assign(socket, gleam_process: :gleam_app.start_process())
-
-    # receive do
-    #   {tag, msg} -> IO.inspect({tag, msg})
-    # end
-
-    {:ok, socket}
+    gleam_store = :gleam_app.create_store(2)
+    {:ok, assign(socket, gleam_store: gleam_store)}
   end
 
   def handle_event(action, params, socket) do
@@ -36,10 +30,7 @@ defmodule MeetupWeb.Game do
   end
 
   def do_handle_event(action, _params, socket) do
-    # non-OTP part
     gleam_store = :gleam_app.update(socket.assigns.gleam_store, action, :none)
-    # OTP part
-    :gleam_app.send_message(socket.assigns.gleam_process, {action, :none})
     {:noreply, assign(socket, gleam_store: gleam_store)}
   end
 
@@ -62,8 +53,16 @@ defmodule MeetupWeb.Game do
               margin: 0;
             }
             input[type=number] {
-    					caret-color: transparent;
+              caret-color: transparent;
               -moz-appearance: textfield;
+            }
+            input[type=number]::selection {
+              color: white;
+              background: black;
+            }
+            input[type=number]::-moz-selection {
+              color: white;
+              background: black;
             }
           </style>
           <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" min="1" max="99" step="1" inputmode="numeric" pattern="[1-9][0-9]" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
