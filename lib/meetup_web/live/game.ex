@@ -27,12 +27,13 @@ defmodule MeetupWeb.Game do
       send(socket.assigns.gleam_otp_pid, {:gleam_otp, action})
       {:noreply, assign(socket, gleam_store: gleam_store)}
     end
-		# Otherwise: Let it crash!
+
+    # Otherwise: Let it crash!
   end
 
   def render(assigns) do
     ~H"""
-    <div class="container mx-auto py-16 text-2xl">
+    <div class="container mx-auto py-16 pb-24 text-2xl">
       <h2 class="text-center pb-3 select-none">Counter</h2>
       <div class="mx-auto rounded-full bg-gradient-to-b from-indigo-500 via-purple-800 to-pink-500 w-32 h-32 flex items-center justify-center text-white font-bold text-3xl drop-shadow-md select-none [text-shadow:0_2px_4px_rgba(0,0,0,.67)] border-2 border border-indigo-400">
         <%= :gleam_app.get_counter_value(@gleam_store) %>
