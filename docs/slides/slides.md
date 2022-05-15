@@ -144,7 +144,7 @@ Run at home? Make you have got Erlang, Elixir, Gleam and Rebar installed. See be
 Run via:
 
 ```sh
-bin/dev/run && open http://localhost:4000/
+bin/dev/run && open http://localhost:4000
 ```
 
 Run the slides via:
@@ -156,7 +156,7 @@ bin/dev/slides && open http://localhost:3030
 &nbsp;
 ### Demo link
 
-<mdi-arrow-right-thick /> <http://localhost:4000/>
+<mdi-arrow-right-thick /> <http://localhost:4000>
 
 ---
 
