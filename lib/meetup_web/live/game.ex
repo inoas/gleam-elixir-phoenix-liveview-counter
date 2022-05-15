@@ -17,9 +17,9 @@ defmodule MeetupWeb.Game do
   end
 
   def handle_event(action, _data, socket) do
-    actions = Enum.map(:gleam_app.actions(), &Atom.to_string(&1))
+    expected_actions = Enum.map(:gleam_app.actions(), &Atom.to_string(&1))
 
-    if action in actions do
+    if action in expected_actions do
       # non-OTP part
       action = String.to_atom(action)
       gleam_store = :gleam_app.update(socket.assigns.gleam_store, action)
@@ -27,6 +27,7 @@ defmodule MeetupWeb.Game do
       send(socket.assigns.gleam_otp_pid, {:gleam_otp, action})
       {:noreply, assign(socket, gleam_store: gleam_store)}
     end
+		# Otherwise: Let it crash!
   end
 
   def render(assigns) do
