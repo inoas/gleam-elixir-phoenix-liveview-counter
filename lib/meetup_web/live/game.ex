@@ -4,6 +4,11 @@ defmodule MeetupWeb.Game do
   def mount(_params, _session, socket) do
     socket = assign(socket, gleam_store: :gleam_app.create_store(2))
     socket = assign(socket, gleam_process: :gleam_app.start_process())
+
+    # receive do
+    #   {tag, msg} -> IO.inspect({tag, msg})
+    # end
+
     {:ok, socket}
   end
 
