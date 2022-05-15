@@ -32,6 +32,7 @@ Briefly about me:
 - Errors were due to using pattern matching and not enough `with` or change-sets for validation.
 - I simply happen to *"let it crash"* - unreasonably though.
 
+
 ---
 
 ## Story/3
@@ -109,20 +110,6 @@ What about the `bad crashes`?
 
 ## Gleam/1
 
-<style>
-img {
-  max-width: 30vw;
-  max-height: 30vh;
-}
-</style>
-
-<img src="/star-history.png" class="rounded drop-shadow-2xl" />
-
-Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lang/alpaca&hamler-lang/hamler&wende/elchemy&purerl/purerl&AbstractMachinesLab/caramel&lfe/lfe&bragful/ephp&rvirding/luerl).
----
-
-## Gleam/2
-
 ### What Gleam avoids
 
 1. Great care around simplicity and DX
@@ -132,7 +119,7 @@ Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lan
 
 ---
 
-## Gleam/3
+## Gleam/2
 
 ### What sets Gleam apart
 
@@ -150,6 +137,21 @@ Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lan
    - Compiling Gleam is ultra snappy and at the same time yields compile time guarantuees.
    - Can be compiled via WASM within the browser - Gleam' playground uses this.
 4. Interacts with Erlang/OTP, Browser-Javascript, NodeJS and possibly Deno.
+
+---
+
+## Gleam/3
+
+<style>
+img {
+  max-width: 35vw;
+  max-height: 35vh;
+}
+</style>
+
+<img src="/star-history.png" class="rounded drop-shadow-2xl" />
+
+Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lang/alpaca&hamler-lang/hamler&wende/elchemy&purerl/purerl&AbstractMachinesLab/caramel&lfe/lfe&bragful/ephp&rvirding/luerl).
 
 ---
 
