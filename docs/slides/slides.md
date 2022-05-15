@@ -141,7 +141,7 @@ Demo and this talk in available here: <https://github.com/inoas/gleam-elixir-pho
 
 Run at home? Make you have got Erlang, Elixir, Gleam and Rebar installed. See below for some instructions.
 
-Run via:
+Run demo app via:
 
 ```sh
 bin/dev/run && open http://localhost:4000
