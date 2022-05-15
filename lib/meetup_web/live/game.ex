@@ -65,7 +65,8 @@ defmodule MeetupWeb.Game do
               background: black;
             }
           </style>
-          <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" min="1" max="99" step="1" inputmode="numeric" pattern="[1-9][0-9]" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
+
+          <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" inputmode="numeric" pattern="\d*" min="1" max="99" step="1" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
         </form>
         <button phx-click="increment" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
           +
