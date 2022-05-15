@@ -1,48 +1,141 @@
-# Gleam on Beam: Elixir's safe escape hatch
+---
+theme: unicorn
+---
+# Gleam on Beam
 
-My long time background is, which may be surprising, is PHP. When moving from PHP I have tried a bunch of technologies, which included creating mobile apps for iOS and Android.
+## Elixir's safe escape hatch
 
-For the mobile app I picked Dart/Flutter for the frontend - nowadays one could try [https://github.com/elixir-desktop/desktop](Elixir-Desktop), which let's you run Elixir code on iOS/Android - and for the backend I picked Phoenix. I had a great time learning both but I really missed the typing in Elixir/Phoenix while onboarding onto both.
+Briefly about me:
 
-The first iterations also had some runtime match errors sneaking into staging due to using pattern matching and not enough `with` or changesets. I simply happen to 'let it crash', unreasonably.
+- Full Stack Dev.
+- Long time background is PHP.
+- When moving from PHP, I have tried a bunch of technologies, which included creating mobile apps for iOS and Android.
 
-The Dart/Flutter experience was different. While there were bugs and not everything was perfect overall the onboarding was awesome because Flutter was mostly declarative and DOM-like and the tooling made it easy to not just use `dynamic` but almost always use explicit static typing. Why?
+---
 
-The IDE (vscode) showed type hints right away, without any delay (like the Elixir typing with type specs and Dialiyzer). The IDE offered up options to pick and function documentation alongside when moving through the vast amounts of Flutter build-in types/components to compose the application off.
+## Story/1
 
-While I did not fell for Dart, it has its culprits, I clearly missed that kind of type safety and helpfulness in Elixir/Phoenix.
+### Picking new technologies
 
-## "Let it crash"
+- For the mobile app I picked Dart/Flutter as the frontend technology.
+  - Nowadays one could try <https://github.com/elixir-desktop/desktop> (Elixir-Desktop), which let's you run Elixir code on iOS/Android as well as Mac, Linux and Windows.
+- For the backend I picked Elixir/Phoenix.
+- I had a great time learning both but I really missed the typing in Elixir/Phoenix while onboarding onto both.
 
-* A) Falsy assumption: Application errors happen at runtime and we just do not handle them. When taking over larger Phoenix projects I have for instance seen a lot of "(MatchError) no match of right hand side value" in Sentry.io logs.
-* B) Truthy assumption: A failing process does not need to kill the system. This also allows for self healing where certain networked resources are not available briefly. On the BEAM without global state and objects we can more or less safely just crash and restart processes.
+---
 
-Erlang and Elixir help a lot on following happy pathes when resources an application requires are set to be available under usual circumstances. So B) is covered out of the box using Beam/OTP for the most part. However A) is not covered. A lot of runtime errors can occur that have nothing to do at all with unexpected errors.
+## Story/2
 
-## Types to the rescue
+### First experiences
 
-Here a statically and strictly typed language can help us. Erlang people know this, see <https://github.com/stars/michallepicki/lists/erlang-and-static-types>.
+- The first iterations of the backend/API (Phoenix) some runtime match errors sneaking into staging.
+- Errors were due to using pattern matching and not enough `with` or change sets for validation.
+- I simply happen to 'let it crash', unreasonably.
 
-* Reason for tools like Dialzyer and to some degree Credo
-* Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp Team, released into the public about 12 month ago: <https://github.com/WhatsApp/erlt>
-* Reason for numerous to bring typing to Erlang or write typed languages against the Beam VM such as: Lisp-Flavoured-Erlang, Alpaca, Hamler, Purerl, Elchemy and Gleam.
+---
 
-## What sets Gleam apart
+## Story/3
 
-1. Great care around simplicity and DX: Many of the attempts to bring typing to the Beam make it hard to pick up for developers not familiar with Lisp, Haskell or ELm. And let's be honest, compared to JavaScript these are ultra-niche. So next to immutability and strict typing developers are also forced to know these and/or understand these ultra niche technologies.
+### Dart/Flutter
+
+- The Dart/Flutter experience was different.
+- Bugs existed as well but the overall the onboarding was awesome
+- Reasons:
+  - Flutter was mostly declarative and DOM-like
+  - Flutter/Dart tooling made it rewarding to not just use `dynamic` but almost always use explicit static typing. Why?
+
+---
+
+## Story/4
+
+### DX benefits of static typing
+
+- The IDE (vscode) showed type hints right away
+- Without any delay (like the Elixir typing with type specs and Dialiyzer)
+- The IDE offered up options to pick and function documentation alongside when moving through the vast amounts of Flutter build-in types/components to compose the application off.
+
+<mdi-arrow-right-thick /> Dart has its culprits but I clearly missed that kind of type safety and DX in Elixir/Phoenix.
+
+---
+
+## Story/5
+
+## "Let it crash!"
+
+1. `Bad crashes`: Application errors happen at runtime and we just do not handle them. When taking over larger Phoenix projects I have for instance seen a lot of `(MatchError) no match of right hand side value` in Sentry.io logs.
+2. `Good crashes`: A failing process does not need to kill the system. This also allows for self healing where certain networked resources are not available briefly. On the BEAM without global state and objects we can more or less safely just crash and restart processes.
+
+Obviously crashes are never good ;-)
+
+---
+
+## Story/6
+
+## "Lessons learned!"
+
+- Erlang and Elixir help a lot on following happy paths
+  - When resources an application requires are set to be available under usual circumstances, it runs
+  - When such resources are temporarily unavailable, some processes crash and restart
+  - <mdi-arrow-right-thick /> The `good crashes` are handled by well written Beam/OTP apps.
+- What about the `bad crashes`?
+  - A lot of runtime errors can occur that have nothing to do at all with unexpected errors.
+  - Change sets or other forms of input validation help.
+  - Type specs, and schemata such as Json-Schema, XML-Schema/XSD, GraphQL help.
+  - Unit tests help.
+  - <mdi-arrow-right-thick /> Static typing can help to avoid many of these bad crashes
+
+---
+
+## Story/7
+
+### Types to the rescue
+
+- Erlang community has tried to fix this within and outside of Erlang, see <https://github.com/stars/michallepicki/lists/erlang-and-static-types>.
+- Reason for tools like Dialzyer and to some degree Credo
+- Reason for numerous attempts to bring typing to Erlang, the last one being `erlt` by the WhatsApp Team, released into the public about 12 month ago: <https://github.com/WhatsApp/erlt>
+- Reason for numerous to bring typing to Erlang or write typed languages against the Beam VM such as: Lisp-Flavoured-Erlang, Alpaca, Hamler, Purerl, Elchemy and Gleam.
+
+---
+
+## Gleam/1
+
+### What Gleam avoids
+
+1. Great care around simplicity and DX
+   - Many of the attempts to bring typing to the Beam make it hard to pick up for developers not familiar with Lisp, Haskell or Elm.
+   - And let's be honest, compared to JavaScript these are ultra-niche.
+   - So next to immutability and strict typing developers are also forced to know these and/or understand these ultra niche technologies.
+
+---
+
+## Gleam/2
+
+### What sets Gleam apart
+
+1. Average developer happiness matters:
+   - Gleam language development: Great care to not add to much to a languages' strangeness-budget.
+   - Not every feature one could think of or desire is implemented.
+   - The language interface or surface is being kept small for this reason.
+   - It should be easy to pick up.
 2. Targets Erlang and Javascript. If there is more financial support the main developer would like to add C/native as a target.
 3. The compiler is written in Rust, while compiling the Gleam compiler takes about 30s to 1minute, compiling gleam is ultra snappy and at the same time yields compile time garantuees.
 4. Interacts with Erlang/OTP or with NodeJS or Deno.
 
-In the Gleam language development, great care is taken to not add to much to a languages strangeness-budget. Not every feature one could have is implemented because of this. The language interface or surface is being kept small for this reason. It should be easy to pick up.
+---
 
-With all that said, let's dive in a bit:
+## Gleam/3
 
-## Demo time
+With all that being said, let's dive in a bit!
 
-Demo in this repo <https://github.com/inoas/gleam-elixir-phoenix-liveview-counter/>.
+---
 
-Make sure you have got erlang, elixir gleam and rebar installed. See below for some instructions.
+## Gleam/4
+
+### Demo time
+
+Demo and this talk in this repo <https://github.com/inoas/gleam-elixir-phoenix-liveview-counter/>.
+
+Run at home? Make you have got Erlang, Elixir, Gleam and Rebar installed. See below for some instructions.
 
 Run via:
 
@@ -50,44 +143,72 @@ Run via:
 bin/dev/run
 ```
 
-## Play time
-
-### How you would get started for real
-
-A) Install ASDF <https://asdf-vm.com/guide/getting-started.html>
+Run the slides via:
 
 ```sh
-brew install asdf # Mac OS only, other instructions above
+bin/dev/slides && open http://localhost:3030
 ```
 
-B) Install Erlang, NodeJS, Gleam, create gleam dummy app, run tests on both targets:
+---
 
-```sh
-asdf install erlang latest
-asdf install nodejs latest
-asdf install gleam latest
-gleam new my_app
-cd my_app
-gleam test --target erlang; gleam test --target javascript
-```
+## Gleam/5
 
-### What we will do
+### How to install gleam
 
-Toying around together on <https://johndoneth.github.io/gleam-playground/>
+1. Install ASDF <https://asdf-vm.com/guide/getting-started.html>
+   ```sh
+   brew install asdf # Mac OS only, other instructions above
+   ```
+2. Install Erlang, NodeJS, Gleam, create gleam dummy app, run tests on both targets:
+   ```sh
+   asdf install erlang latest
+   asdf install nodejs latest
+   asdf install gleam latest
+   ```
+3. Create a Gleam dummy app, run tests on both targets:
+   ```sh
+   gleam new my_app
+   cd my_app
+   gleam test --target erlang; gleam test --target javascript
+   ```
 
-Caveat: Only one module, no dependencies except gleam's included prelude and gleam_stdlib.
+---
 
-Going through examples found here: <https://gleam.run/book/tour/>
+## Gleam/6
 
-## Closing Words
+### Playtime
 
-What Gleam misses, in my book:
+- Toying around together on <https://johndoneth.github.io/gleam-playground/>
+- Caveat: Only one module, no dependencies except gleam's included prelude and `gleam_stdlib`.
+- Going through examples found here: <https://gleam.run/book/tour/>
 
-* The compiler, to be able to deal with broken ASTs and still offer good help thus that we can have autosuggestions/completion and better IDE tooling.
-* Complete exhaustiveness checks on `case` statements
+---
 
-Both of these features are planned and/or already worked on. Other than that, all that is left is eco-system, libraries, more develoeprs, more users. There is already a lot of it out there, including JSON-Decoders, support for Protocol-Buffers, HTTP1/2 servers, websocket support is being worked on. See <https://github.com/gleam-lang/awesome-gleam>.
+## Closing Words/1
 
-So in short, we need you, we want you :).
+### Is Gleam production ready?
 
-The Gleam community is very friendly, and not snobbish at all and welcomes developers of all trades and levels: <https://discord.gg/twY7ZhKTM3> and <https://github.com/gleam-lang/gleam/discussions> and <https://gleam.run>
+To my knowledge the main author certainly thinks so. People are using it in production. In the end Gleam generated rather readable Erlang (or JavaScript).
+
+### Anything bad?
+
+- Complete exhaustiveness checks on `case` statements
+- The compiler, to be able to deal with broken/partial ASTs and still offer good help
+  - Thus that we can have autosuggestions/completion and better IDE tooling.
+- To my knowledge, these features are on the core developer's lists
+
+---
+
+## Closing Words/2
+
+- The language is pretty stable.
+- The main author has stated that they intent to not break any language syntax or core language interfaces
+- The eco-system needs help, libraries, more developers and more users
+- There is already a lot of it out there, including:
+  - including JSON-Decoders, support for Protocol-Buffers, HTTP1/2 servers
+- websocket support is being worked on
+- For more See <https://github.com/gleam-lang/awesome-gleam>.
+
+**So in short: Gleam needs you, Gleam wants you :).**
+
+**The Gleam community is very friendly, and not snobbish at all and welcomes developers of all trades and levels: <https://discord.gg/twY7ZhKTM3> and <https://github.com/gleam-lang/gleam/discussions> and <https://gleam.run>.**

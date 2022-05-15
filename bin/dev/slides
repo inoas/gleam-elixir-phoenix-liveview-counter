@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")" && cd ../..
+
+echo "Running slidev..." &&
+	echo "$ cd docs/slides/slidev && npx slidev" &&
+	cd docs/slides/slidev && npx slidev
+	echo "...done!" &&
+	exit
