@@ -8,7 +8,7 @@ Briefly about me:
 - Diploma degree in Sociology.
 - Full Stack Dev since 1997/2001.
 - Long time background is PHP <mdi-emoticon-neutral /> & CakePHP <mdi-emoticon />.
-- Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib> <mdi-emoticon-excited />.
+- Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib> <mdi-emoticon-excited /> and a bit to Gleam Playground.
 - When moving from PHP, I have tried a bunch of technologies, which included picking Phoenix and Flutter for creating mobile apps for iOS/Android.
 
 ---
@@ -142,6 +142,7 @@ Source: [star-history.com](https://star-history.com/#gleam-lang/gleam&alpaca-lan
    - Not every feature one could think of or desire is implemented.
    - The language interface/surface is being kept small for this reason.
    - It should be easy to pick up.
+   - Expressive and clear error messages.
    - Powerful type inference to get started or for the lazy (appears if types are optional or dynamic).
 2. Compiles to targets Erlang and JavaScript.
    - Once there is more financial support the main developer would like to add C/native as a compile target.
@@ -215,6 +216,15 @@ bin/dev/slides && open http://localhost:3030
 - Toying around together on <https://johndoneth.github.io/gleam-playground>.
 - Caveat: Only one module, no dependencies except gleam's included prelude and `gleam_stdlib`.
 - Going through some examples found here: <https://gleam.run/book/tour>.
+
+---
+
+## Gleam/8
+
+### Playground Collection
+
+- [Strings attached](https://johndoneth.github.io/gleam-playground/?s=JYWwDg9gTgLgBAcwDYFMCGID0wIChSSyKoaYDOMUwAdggPoBGArsEgCYpRxplxkP5w0eMnRYGwGHQpVagwiJJYoKMkyQxcuMEwZwAZtTgg0NABQBKOAG9ccOACIAEiiRIIcAGJQ01ANb6TLAAhA5wAD4AfHA4AHRgsjBI1Fr2ANrOru6OADSOAKJIwAAewFwOALp2EdH8sfpQECDSlDQIZNVRfAyxaGBgKNRsZg4AsigoMExgoRadtT0wEC2yCPMxEPGJyak23GRknPAA8n5mMm1WALxwADy3mW4eAOJKcIC8G4DVO6EAXEww%2BgAHJFol0JFILrRYksVm04ABfGpwFRqDSxJjUADuPjAIwcc3hQA)
+  - Strings and StringBuilder, there is also BitStrings
 
 ---
 
