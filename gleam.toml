@@ -1,1 +1,3 @@
 name = "meetup"
+
+dependencies = { gleam_stdlib = "~> 0.21"}
