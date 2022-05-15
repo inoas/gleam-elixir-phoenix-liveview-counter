@@ -199,7 +199,7 @@ bin/dev/slides && open http://localhost:3030
 
 ---
 
-## Closing Words/1
+## Closing words/1
 
 ### Is Gleam production ready?
 
@@ -214,7 +214,7 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ---
 
-## Closing Words/2
+## Closing words/2
 
 ### The state of matter
 
@@ -228,7 +228,7 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ---
 
-## Closing Words/3
+## Closing words/3
 
 ### Thanks and shout-outs
 
@@ -239,7 +239,7 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ---
 
-## Closing Words/4
+## Closing words/4
 
 ### Become shiny
 
