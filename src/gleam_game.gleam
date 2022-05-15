@@ -1,5 +1,3 @@
-import gleam/io
-
 pub opaque type Counter {
   Counter(step: Int, value: Int)
 }
@@ -19,25 +17,11 @@ pub fn actions() -> List(Action) {
 
 pub fn update(counter: Counter, message: Action) -> Counter {
   case message {
-    Increment -> {
-      io.debug(#("gleam before inc", counter))
-      io.debug(#("gleam before inc step", counter.step))
-      io.debug(#("gleam before inc value", counter.value))
-      let counter = Counter(..counter, value: counter.value + counter.step)
-      io.debug(#("gleam after inc step", counter.step))
-      io.debug(#("gleam after inc value", counter.value))
-      io.debug(#("gleam after inc", counter))
-      counter
-    }
-    Decrement -> {
-      io.debug(#("gleam before inc", counter))
-      io.debug(#("gleam before inc step", counter.step))
-      io.debug(#("gleam before inc value", counter.value))
-      let counter = Counter(..counter, value: counter.value - counter.step)
-      io.debug(#("gleam after inc step", counter.step))
-      io.debug(#("gleam after inc value", counter.value))
-      io.debug(#("gleam after inc", counter))
-      counter
-    }
+    Increment -> Counter(..counter, value: counter.value + counter.step)
+    Decrement -> Counter(..counter, value: counter.value - counter.step)
   }
+}
+
+pub fn get_value(counter: Counter) -> Int {
+  counter.value
 }
