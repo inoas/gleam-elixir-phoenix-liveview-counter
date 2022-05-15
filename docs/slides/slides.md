@@ -212,10 +212,11 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ### Anything bad?
 
-- Complete exhaustiveness checks on `case` statements
+- Complete exhaustiveness checks on `case` statements.
 - The compiler, to be able to deal with broken/partial ASTs and still offer good help
   - Thus that we can have autosuggestions/completion and better IDE tooling.
-- To my knowledge, these features are on the core developer's lists
+
+<mdi-head-dots-horizontal /> To my knowledge, these features are on the core developer's lists.
 
 ---
 
@@ -223,13 +224,13 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ### The state of matter
 
-- The language is pretty stable.
-- The main author has stated that they intent to not break any language syntax or core language interfaces
-- The eco-system needs help, libraries, more developers and more users.
-- There is already a lot of it out there, including:
-  - HTTP1/2 servers, JSON decoders, Protocol buffers, PostgreSQL client, and many more
-- Websocket support is being worked on
-- For more see <https://github.com/gleam-lang/awesome-gleam>.
+- The language is pretty stable:
+  - The main author has stated that they intent to not break any language syntax or core language interfaces.
+  - Syntax high-lightning and the first LSP is available.
+  - Github officially supports the language.
+- The eco-system needs help, libraries, more developers, and more users:
+  - A lot of things already exists: HTTP1/2 servers, HTTP clients, JSON decoders, Protocol-Buffers, PostgreSQL client, Mustache and Matcha templating and many more.
+  - For more see <https://github.com/gleam-lang/awesome-gleam>.
 
 ---
 
