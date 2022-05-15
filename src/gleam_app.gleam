@@ -9,20 +9,25 @@ import gleam/otp/process.{Sender}
 
 // OTP part:
 pub type Message {
-  Request(reply_channel: Sender(Counter))
+  Request(reply_channel: Sender(String))
 }
 
-pub fn start_process(state) {
+pub fn start_process() {
+  let state = create_store(2)
   assert Ok(channel) = actor.start(state, handle_message)
   process.call(channel, Request, 100)
   channel
 }
 
 fn handle_message(message, state) {
-  // io.debug("The actor got a message: ")
-  // io.debug(message)
-  process.send(message.reply_channel, state)
+  io.print("The actor got a message: ")
+  io.debug(message)
+  process.send(message.reply_channel, "Done")
   actor.Continue(state)
+}
+
+pub fn send_message(channel, message) {
+  actor.send(channel, message)
 }
 
 // non-OTP part:
