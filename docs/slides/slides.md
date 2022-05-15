@@ -237,6 +237,12 @@ To my knowledge the main author certainly thinks so. People are using it in prod
 
 ### Become shiny
 
-**So in short: Gleam needs you, Gleam wants you :).**
+The Gleam community is very friendly, not snobbish at all, and welcomes developers of all trades and levels!
 
-**The Gleam community is very friendly, not snobbish at all, and welcomes developers of all trades and levels: <https://discord.gg/twY7ZhKTM3> and <https://github.com/gleam-lang/gleam/discussions> and <https://gleam.run>.**
+**<mdi-emoticon-excited /> Gleam needs you - Gleam wants you! You want Gleam - you need Gleam! <mdi-emoticon-excited />**
+
+... and no, it is not going to replace Elixir anytime soon!
+
+- Discord: <https://discord.gg/twY7ZhKTM3>
+- GitHub Discussions: <https://github.com/gleam-lang/gleam/discussions>
+- Gleam on the web: <https://gleam.run>
