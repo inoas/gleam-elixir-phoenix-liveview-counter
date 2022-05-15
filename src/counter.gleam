@@ -4,7 +4,7 @@ pub opaque type Counter {
 
 pub fn new(step: Int) -> Counter {
   case step {
-    0 -> Counter(step: 1, value: 0)
+    step if step <= 0 -> Counter(step: 1, value: 0)
     _ -> Counter(step: step, value: 0)
   }
 }
