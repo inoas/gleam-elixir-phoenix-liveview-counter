@@ -12,14 +12,14 @@ pub type Message {
   Request(reply_channel: Sender(Counter))
 }
 
-pub fn start_otp(state) {
+pub fn start_process(state) {
   assert Ok(channel) = actor.start(state, handle_message)
   process.call(channel, Request, 100)
   channel
 }
 
 fn handle_message(message, state) {
-  io.println("The actor got a message")
+  io.debug("The actor got a message: ")
   io.debug(message)
   process.send(message.reply_channel, state)
   actor.Continue(state)

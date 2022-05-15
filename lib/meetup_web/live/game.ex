@@ -6,24 +6,25 @@ defmodule MeetupWeb.Game do
     gleam_store = :gleam_app.create_store(2)
     socket = assign(socket, gleam_store: gleam_store)
     # OTP part
-    {:sender, gleam_otp_pid, details} = :gleam_app.start_otp(gleam_store)
-    IO.inspect(details)
+    {:sender, gleam_process_pid, _details} = :gleam_app.start_otp(gleam_store)
+    # IO.inspect(details)
     # Send test #1
-    send(gleam_otp_pid, {:gleam_otp, :increment})
-    socket = assign(socket, gleam_otp_pid: gleam_otp_pid)
+    send(gleam_process_pid, {:gleam_process, :increment})
+    socket = assign(socket, gleam_process_pid: gleam_process_pid)
     # Send test #2
-    send(socket.assigns.gleam_otp_pid, {:gleam_otp, :increment})
+    send(socket.assigns.gleam_process_pid, {:gleam_process, :increment})
     {:ok, socket}
   end
 
   def handle_event(action, params, socket) do
     expected_actions = Enum.map(:gleam_app.actions(), &Atom.to_string(&1))
 
-    # Otherwise: Let it crash!
     if action in expected_actions do
       action = String.to_atom(action)
       do_handle_event(action, params, socket)
     end
+
+    # Otherwise: Let it crash!
   end
 
   def do_handle_event(:set_step, %{"step" => step} = _params, socket) do
@@ -42,7 +43,7 @@ defmodule MeetupWeb.Game do
     # non-OTP part
     gleam_store = :gleam_app.update(socket.assigns.gleam_store, action, :none)
     # OTP part
-    send(socket.assigns.gleam_otp_pid, {:gleam_otp, action})
+    # send(socket.assigns.gleam_process_pid, {:gleam_process, action})
     {:noreply, assign(socket, gleam_store: gleam_store)}
   end
 
@@ -64,10 +65,9 @@ defmodule MeetupWeb.Game do
               -webkit-appearance: none;
               margin: 0;
             }
-            /* Firefox */
             input[type=number] {
-              -moz-appearance: textfield;
     					caret-color: transparent;
+              -moz-appearance: textfield;
             }
           </style>
           <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" min="1" max="99" step="1" inputmode="numeric" pattern="[1-9][0-9]" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
