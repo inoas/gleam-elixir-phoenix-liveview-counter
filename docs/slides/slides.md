@@ -7,9 +7,8 @@ Briefly about me:
 
 - Diploma degree in Sociology, Economics & Psychology.
 - Full Stack Dev since 1997/2001.
-- Long time background is PHP <mdi-emoticon-neutral /> & CakePHP <mdi-emoticon />.
 - Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib> <mdi-emoticon-excited /> and a bit to Gleam Playground.
-- When moving from PHP, I have tried a bunch of technologies, which included picking Phoenix and Flutter for creating mobile apps for iOS/Android.
+- When looking for new tech, I have tried a bunch of technologies, which included picking Phoenix and Flutter for creating mobile apps for iOS/Android.
 
 ---
 
