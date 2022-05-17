@@ -195,7 +195,7 @@ bin/dev/slides && open http://localhost:3030
    ```sh
    brew install asdf # Mac OS only, other instructions above
    ```
-2. Install Erlang, NodeJS, Gleam, create gleam dummy app, run tests on both targets:
+2. Install Erlang, NodeJS, Gleam
    ```sh
    asdf install erlang latest
    asdf install nodejs latest
