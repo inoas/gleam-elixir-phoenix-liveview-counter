@@ -143,8 +143,8 @@ What about the `bad crashes`?
 
 <style>
 img {
-  max-width: 35vw;
-  max-height: 35vh;
+  height: 67%;
+  width: auto;
 }
 </style>
 
