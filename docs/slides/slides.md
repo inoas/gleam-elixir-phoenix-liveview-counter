@@ -5,7 +5,7 @@ theme: unicorn
 
 Briefly about me:
 
-- Diploma degree in Sociology.
+- Diploma degree in Sociology, Economics & Psychology.
 - Full Stack Dev since 1997/2001.
 - Long time background is PHP <mdi-emoticon-neutral /> & CakePHP <mdi-emoticon />.
 - Contributor to Gleam's stdlib: <https://github.com/gleam-lang/stdlib> <mdi-emoticon-excited /> and a bit to Gleam Playground.
