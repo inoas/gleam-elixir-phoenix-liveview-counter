@@ -2,7 +2,7 @@ defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do
-    gleam_store = :gleam_app.create_store(1)
+    gleam_store = :gleam_app.create_store(2)
     {:ok, assign(socket, gleam_store: gleam_store)}
   end
 
