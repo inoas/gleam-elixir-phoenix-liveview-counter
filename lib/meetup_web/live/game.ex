@@ -2,7 +2,7 @@ defmodule MeetupWeb.Game do
   use Phoenix.LiveView, layout: {MeetupWeb.LayoutView, "live.html"}
 
   def mount(_params, _session, socket) do
-    gleam_store = :gleam_app.create_store(2)
+    gleam_store = :gleam_app.create_store(1)
     {:ok, assign(socket, gleam_store: gleam_store)}
   end
 
@@ -45,7 +45,7 @@ defmodule MeetupWeb.Game do
         <button phx-click="decrement" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
           -
         </button>
-        <form phx-change="set_step">
+        <form phx-change="set_step" onsubmit="return false;">
           <style type="text/css">
             input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
@@ -65,7 +65,7 @@ defmodule MeetupWeb.Game do
               background: black;
             }
           </style>
-          <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" inputmode="numeric" pattern="\d*" min="1" max="99" step="1" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
+          <input name="step" value={:gleam_app.get_counter_step(@gleam_store)} phx-debounce="blur" type="number" inputmode="numeric" pattern="\d*" step="1" autofocus="autofocus" class="block rounded w-14 h-14 font-xl border border-indigo-600 text-center focus:outline-none focus:ring focus:ring-violet-300"/>
         </form>
         <button phx-click="increment" class="block bg-indigo-500 text-white rounded w-14 h-14 font-xl hover:bg-indigo-700 drop-shadow select-none shadow hover:shadow-none hover:shadow-inner border border-indigo-600">
           +

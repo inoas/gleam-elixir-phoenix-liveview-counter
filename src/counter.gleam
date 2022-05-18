@@ -25,7 +25,7 @@ pub fn decrement(counter: Counter) -> Counter {
 }
 
 pub fn set_step(counter: Counter, payload: Option(Int)) -> Counter {
-  let step = option.unwrap(payload, or: 0)
+  let step = option.unwrap(payload, or: 1)
   case step <= 0 {
     True -> Counter(..counter, step: 1)
     False -> Counter(..counter, step: step)

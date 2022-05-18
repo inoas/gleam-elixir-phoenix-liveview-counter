@@ -111,10 +111,11 @@ What about the `bad crashes`?
 
 ### What Gleam avoids
 
-1. Great care around simplicity and DX
-   - Many of the attempts to bring typing to the Beam make it hard to pick up for developers not familiar with say Lisp, Haskell, PureScript, Elm or OCaml.
-   - And let's be honest, compared to say JavaScript these are ultra-niche.
-   - So next to immutability and strict typing developers are also forced to know these and/or understand these ultra niche technologies.
+Great care around simplicity and DX:
+
+- Many of the attempts to bring typing to the Beam make it hard to pick up for developers not familiar with say Lisp, Haskell, PureScript, Elchemy or OCaml.
+- And let's be honest: Compared to say JavaScript these are ultra-niche.
+- Why? Next to immutability, recursion and strict typing developers are also forced to know these and/or understand these niche technologies and be willing to read their syntax and live with their abstractions.
 
 ---
 
@@ -126,7 +127,7 @@ What about the `bad crashes`?
    - The Gleam language is developed with great care limiting the languages' *strangeness-budget*.
    - Syntax appears to be familiar to JavaScript.
    - Not every feature one could think of or desire is implemented.
-   - The language interface/surface is being kept small for this reason.
+   - The language interface/surface is being kept small for this reason (Chess vs Go).
    - It should be easy to pick up.
    - Expressive and clear error messages.
    - Powerful type inference to get started or for the lazy (appears if types are optional or dynamic).
