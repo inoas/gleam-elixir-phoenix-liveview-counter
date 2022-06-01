@@ -217,7 +217,7 @@ bin/dev/slides && open http://localhost:3030
    gleam test --target erlang; gleam test --target javascript
    ```
 
-If you want to use Gleam inside an Elixir project, see: <https://github.com/gleam-lang/mix_gleam>
+If you want to use Gleam inside an Elixir project, see: <https://github.com/gleam-lang/mix_gleam>.
 
 ---
 
