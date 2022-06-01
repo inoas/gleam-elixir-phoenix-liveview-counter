@@ -198,9 +198,12 @@ bin/dev/slides && open http://localhost:3030
    ```
 2. Install Erlang, NodeJS, Gleam
    ```sh
-   asdf install erlang latest
-   asdf install nodejs latest
-   asdf install gleam latest
+   asdf install elixir 1.13.4-otp-25
+   asdf install erlang 25.0
+   asdf install nodejs 18.2.0
+   asdf install gleam 0.21.0
+   # Make sure to run following outside of your gleam project dir and with the elixir version your gleam up requires by `.tool-versions` being set as active via asdf:
+   mix archive.install hex mix_gleam
    ```
 3. Create a Gleam dummy app, run tests on both targets:
    ```sh
