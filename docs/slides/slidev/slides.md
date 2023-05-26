@@ -172,10 +172,10 @@ Run at home? Make you have got Erlang, Elixir, Gleam and Rebar installed. See be
 Run demo app via:
 
 ```sh
-asdf install erlang 25.0
-asdf install elixir 1.13.4-otp-25
-asdf install nodejs 18.2.0
-asdf install gleam 0.21.0
+asdf install erlang 26.0
+asdf install elixir 1.14.5-otp-26
+asdf install nodejs 18.16.0
+asdf install gleam 0.29.0
 # Make sure to run following outside of your gleam project dir and with the elixir version your gleam up requires by `.tool-versions` being set as active via asdf:
 mix archive.install hex mix_gleam
 bin/dev/run && open http://localhost:4000
@@ -184,11 +184,11 @@ bin/dev/run && open http://localhost:4000
 Run the slides via:
 
 ```sh
-asdf install nodejs 18.2.0
 bin/dev/slides && open http://localhost:3030
 ```
 
 &nbsp;
+
 ### Demo link
 
 <mdi-arrow-right-thick /> <http://localhost:4000>
