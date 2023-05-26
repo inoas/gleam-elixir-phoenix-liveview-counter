@@ -11,9 +11,17 @@ defmodule Meetup.MixProject do
       elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       name: "#{@app}",
-      archives: [mix_gleam: "~> 0.4.0"],
-      aliases: MixGleam.add_aliases(),
-      erlc_paths: ["build/dev/erlang/#{@app}/build"],
+      archives: [mix_gleam: "~> 0.6.1"],
+      compilers: [:gleam | Mix.compilers()],
+      aliases: [
+        # Or add this to your aliases function
+        "deps.get": ["deps.get", "gleam.deps.get"]
+      ],
+      erlc_paths: [
+        "build/dev/erlang/#{@app}/_gleam_artefacts",
+        # For Gleam < v0.25.0
+        "build/dev/erlang/#{@app}/build"
+      ],
       erlc_include_path: "build/dev/erlang/#{@app}/include",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -53,7 +61,7 @@ defmodule Meetup.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:gleam_stdlib, "~> 0.18"},
+      {:gleam_stdlib, "~> 0.29"},
       {:gleeunit, "~> 0.5", [only: [:dev, :test], runtime: false]}
     ]
   end
