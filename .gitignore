@@ -35,3 +35,6 @@ meetup-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# LSP temp dirs
+.elixir_ls
+.elixir-tools

@@ -7,6 +7,8 @@ echo "Clearing build caches..." &&
 	rm -rf build/ &&
 	echo "$ rm -rf _build/" &&
 	rm -rf _build/ &&
+	echo "$ rm -rf .elixir-tools" &&
+	rm -rf .elixir-tools &&
 	echo "$ rm -rf .elixir_ls" &&
 	rm -rf .elixir_ls &&
 	echo "...done!" &&

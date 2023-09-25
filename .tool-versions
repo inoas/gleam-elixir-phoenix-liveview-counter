@@ -1,4 +1,5 @@
-elixir 1.14.5-otp-26
 erlang 26.0
-gleam 0.29.0
-nodejs 18.16.0
+elixir 1.15.6-otp-26
+nodejs 20.7.0
+deno 1.37.0
+gleam 0.30.5

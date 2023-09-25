@@ -23,5 +23,7 @@ echo "Clearing caches..." &&
 	mix local.hex --force &&
 	echo "$ rm -rf .elixir_ls" &&
 	rm -rf .elixir_ls &&
+	echo "$ rm -rf .elixir-tools" &&
+	rm -rf .elixir-tools &&
 	echo "...done!" &&
 	exit

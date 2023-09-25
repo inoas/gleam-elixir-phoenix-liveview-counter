@@ -8,7 +8,7 @@ defmodule Meetup.MixProject do
     [
       app: @app,
       version: @version,
-      elixir: "~> 1.13",
+      elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       name: "#{@app}",
       archives: [mix_gleam: "~> 0.6.1"],
@@ -35,7 +35,7 @@ defmodule Meetup.MixProject do
   def application do
     [
       mod: {Meetup.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :inets]
     ]
   end
 
@@ -61,8 +61,8 @@ defmodule Meetup.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:gleam_stdlib, "~> 0.29"},
-      {:gleeunit, "~> 0.5", [only: [:dev, :test], runtime: false]}
+      {:mix_gleam, "~> 0.6.1"},
+      {:gleam_stdlib, "~> 0.30.2"}
     ]
   end
 

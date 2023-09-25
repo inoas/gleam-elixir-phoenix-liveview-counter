@@ -3,6 +3,9 @@
 cd "$(dirname "$0")" && cd ../..
 
 echo "$ mix deps.get && iex -S mix phx.server" &&
+	echo "mix archive.install hex mix_gleam --force" &&
+ 	mix archive.install hex mix_gleam --force &&
+	echo "mix deps.get"
 	mix deps.get &&
 	iex -S mix phx.server &&
 	exit
