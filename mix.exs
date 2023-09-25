@@ -61,8 +61,8 @@ defmodule Meetup.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:mix_gleam, "~> 0.6.1"},
-      {:gleam_stdlib, "~> 0.30.2"}
+      {:mix_gleam, "~> 0.6"},
+      {:gleam_stdlib, "~> 0.30"}
     ]
   end
 
