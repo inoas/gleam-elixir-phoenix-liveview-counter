@@ -1,0 +1,418 @@
+{
+  "name": "ASDF Dev Container with Postgres and Redis via Docker Compose",
+  "image": "iloveitaly/asdf-devcontainer:0-ubuntu-22.04",
+  "forwardPorts": [
+    6379,
+    5432
+  ],
+  "postCreateCommand": "sudo apt-get update -y && sudo apt-get install -y fonts-firacode; /asdf-post-create.sh",
+  "remoteUser": "vscode",
+  "features": {
+    "homebrew": "latest",
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "gleam.gleam",
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml",
+        "PKief.material-icon-theme",
+        "DavidAnson.vscode-markdownlint"
+      ]
+    },
+    "settings": {
+      "[css]": {
+        "editor.defaultFormatter": "svipas.prettier-plus",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2
+      },
+      "[dart]": {
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+          160
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true
+      },
+      "[dockercompose]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[elixir]": {
+        "editor.acceptSuggestionOnEnter": "off",
+        // "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        // "editor.tabSize": 2,
+        "editor.detectIndentation": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true, // Provides smart completion for "do" and "fn ->" blocks. Does not run the Elixir formatter.
+        "editor.insertSpaces": true,
+        "editor.trimAutoWhitespace": false,
+        "editor.wordBasedSuggestions": false,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true
+      },
+      "[erlang]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.trimAutoWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true
+      },
+      "[HEEx]": {
+        // "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter",
+        "editor.detectIndentation": true,
+        // "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        // "editor.formatOnType": true,
+        // "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": true,
+        "files.insertFinalNewline": false,
+        "files.trimTrailingWhitespace": true
+      },
+      "[HTML (EEx)]": {
+        // "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter",
+        "editor.detectIndentation": true,
+        // "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        // "editor.formatOnType": true,
+        // "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": true,
+        "files.insertFinalNewline": false,
+        "files.trimTrailingWhitespace": true
+      },
+      "[html-eex]": {
+        // "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter",
+        "editor.detectIndentation": true,
+        // "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        // "editor.formatOnType": true,
+        // "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": true,
+        "files.insertFinalNewline": false,
+        "files.trimTrailingWhitespace": true
+      },
+      "[html]": {
+        "editor.defaultFormatter": "svipas.prettier-plus",
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": true,
+        "editor.language.colorizedBracketPairs": [
+          [
+            "<",
+            ">"
+          ] // HTML/XML Tags
+        ]
+        // "editor.tabSize": 2
+      },
+      "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.detectIndentation": true,
+        // "editor.tabSize": 2
+        "editor.insertSpaces": true
+      },
+      "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.detectIndentation": true,
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false
+        // "editor.tabSize": 2,
+      },
+      "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.detectIndentation": false,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2
+      },
+      "[markdown]": {
+        "editor.defaultFormatter": "svipas.prettier-plus"
+      },
+      "[phoenix-heex]": {
+        // "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        "editor.defaultFormatter": "animus-coop.vscode-elixir-mix-formatter",
+        "editor.detectIndentation": true,
+        // "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        // "editor.formatOnType": true,
+        // "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": true,
+        "files.insertFinalNewline": false,
+        "files.trimTrailingWhitespace": true
+      },
+      "[rust]": {
+        "editor.formatOnSave": true
+      },
+      "[sass]": {
+        "editor.defaultFormatter": "svipas.prettier-plus",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2
+      },
+      "[scss]": {
+        "editor.defaultFormatter": "svipas.prettier-plus",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2
+      },
+      "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+      },
+      "[sql]": {
+        "editor.defaultFormatter": "bradymholt.pgformatter",
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false
+      },
+      "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.detectIndentation": false,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.wordWrapColumn": 160
+      },
+      "[vue]": {
+        "editor.defaultFormatter": "octref.vetur",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+      },
+      "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml",
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.language.colorizedBracketPairs": [
+          [
+            "<",
+            ">"
+          ] // HTML/XML Tags
+        ]
+      },
+      "[yaml]": {
+        "editor.autoIndent": "keep",
+        "editor.defaultFormatter": "svipas.prettier-plus",
+        "editor.detectIndentation": false,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+      },
+      "better-comments.tags": [
+        {
+          "backgroundColor": "transparent",
+          "bold": false,
+          "color": "#ffaff3",
+          "italic": true,
+          "strikethrough": false,
+          "tag": "////",
+          "underline": false
+        }
+      ],
+      "code-eol.crlfCharacter": "↵",
+      "code-eol.newlineCharacter": "↓",
+      "code-eol.returnCharacter": "←",
+      "code-runner.enableAppInsights": false,
+      "cSpell.diagnosticLevel": "Hint",
+      "cSpell.enabled": true,
+      "cSpell.language": "en,de-de",
+      "dart.enableCompletionCommitCharacters": true,
+      "dart.lineLength": 160,
+      "dart.openDevTools": "flutter",
+      "dart.previewCommitCharacters": true,
+      "dart.previewLsp": true,
+      "editor.accessibilitySupport": "off",
+      // Bracket-pair colorization
+      "editor.bracketPairColorization.enabled": true,
+      "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+      // "editor.fontFamily": "Cascadia Mono",
+      // "editor.fontFamily": "Ubuntu Mono",
+      // "editor.fontFamily": "Fira Code",
+      // "editor.fontFamily": "JetBrains Mono",
+      // "editor.fontFamily": "Mona Lisa",
+      // "editor.fontFamily": "DM Mono",
+      // "editor.fontFamily": "Comic Mono",
+      // "editor.fontFamily": "Liga Hack",
+      "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+      "editor.fontLigatures": true,
+      "editor.fontSize": 14,
+      "editor.fontWeight": "400",
+      "editor.formatOnPaste": false,
+      "editor.formatOnType": false,
+      "editor.guides.bracketPairs": "active",
+      // Bracket-pair guides
+      "editor.guides.bracketPairsHorizontal": "active",
+      "editor.guides.highlightActiveBracketPair": true,
+      "editor.guides.highlightActiveIndentation": "always",
+      // Indentation guides
+      "editor.guides.indentation": true,
+      "editor.inlineSuggest.enabled": true,
+      "editor.insertSpaces": true,
+      "editor.mouseWheelScrollSensitivity": 0.33,
+      "editor.mouseWheelZoom": true,
+      "editor.quickSuggestions": {
+        "comments": "on",
+        "other": "on",
+        "strings": "on"
+      },
+      "editor.renderControlCharacters": true,
+      "editor.renderLineHighlightOnlyWhenFocus": true,
+      "editor.renderWhitespace": "all",
+      "editor.rulers": [
+        80,
+        98,
+        120
+      ],
+      "editor.semanticHighlighting.enabled": true,
+      "editor.stickyScroll.enabled": true,
+      "editor.suggest.showStatusBar": true,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "on",
+      "editor.tabSize": 2,
+      "editor.tokenColorCustomizations": {
+        "[Default Dark+]": {
+          "textMateRules": [
+            {
+              "scope": "comment",
+              "settings": {
+                "fontStyle": "italic",
+                "foreground": "#83f500c1"
+              }
+            }
+          ]
+        }
+      },
+      "elixir.credo.diffMode.enabled": true,
+      "elixir.credo.enableDebug": false,
+      "elixir.credo.executePath": "/Users/jonas/.asdf/shims/mix",
+      "elixir.credo.ignoreWarningMessages": true,
+      "elixir.credo.lintEverything": true,
+      "elixir.credo.strictMode": true,
+      "elixirLS.dialyzerEnabled": true,
+      "elixirLS.fetchDeps": false,
+      "elixirLS.suggestSpecs": true,
+      "emmet.includeLanguages": {
+        "elixir": "html",
+        "heex": "html",
+        "HTML (EEx)": "html",
+        "html-eex": "html",
+        "phoenix-heex": "html",
+        "surface": "html"
+      },
+      "explorer.confirmDelete": false,
+      "explorer.confirmDragAndDrop": false,
+      "extensions.ignoreRecommendations": false,
+      "files.associations": {
+        "*.heex": "html-eex"
+      },
+      "files.autoSave": "off",
+      "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true
+      },
+      "git.openRepositoryInParentFolders": "never",
+      "html.format.endWithNewline": true,
+      "html.format.indentHandlebars": true,
+      "html.format.indentInnerHtml": true,
+      "markdown-pdf.executablePath": "/opt/homebrew/bin/chromium",
+      "material-icon-theme.activeIconPack": "none",
+      "namespaceResolver.sortAlphabetically": true,
+      "namespaceResolver.sortNatural": true,
+      "prettier.bracketSameLine": true,
+      "prettier.eslintIntegration": true,
+      "prettier.printWidth": 160,
+      "prettier.tslintIntegration": true,
+      "redhat.telemetry.enabled": false,
+      "search.quickOpen.includeHistory": false,
+      "security.workspace.trust.untrustedFiles": "open",
+      "svelte.enable-ts-plugin": true,
+      "tailwindCSS.includeLanguages": {
+        "elixir": "html",
+        "html-heex": "html",
+        "phoenix-heex": "html"
+      },
+      "telemetry.telemetryLevel": "off",
+      "terminal.enableAppInsights": false,
+      // "terminal.explorerKind": "external",
+      "terminal.external.osxExec": "iTerm.app",
+      "terminal.integrated.enableMultiLinePasteWarning": false,
+      "terminal.integrated.fontFamily": "MesloLGS NF",
+      "terminal.integrated.mouseWheelScrollSensitivity": 0.33,
+      "terminal.integrated.profiles.osx": {
+        "zsh": {
+          "args": [
+            "-l"
+          ],
+          "path": "/bin/zsh -l"
+        }
+      },
+      "window.titleBarStyle": "native",
+      "workbench.colorCustomizations": {
+        // "editorBracketHighlight.foreground1": "#B48EAD",
+        // "editorBracketHighlight.foreground2": "#A3BE8C",
+        // "editorBracketHighlight.foreground3": "#EBCB8B",
+        // "editorBracketHighlight.foreground4": "#D08770",
+        // "editorBracketHighlight.foreground5": "#BF616A",
+        // "editorBracketHighlight.foreground6": "#abb2c0",
+        // "editor.bracketPairColorization.foreground1": "#CC1177",
+        // "editor.bracketPairColorization.foreground2": "#5544DD",
+        // "editor.bracketPairColorization.foreground3": "#CC6622",
+        // "editor.bracketPairColorization.foreground4": "#779428",
+        // "editor.bracketPairColorization.foreground5": "#009944",
+        // "editor.bracketPairColorization.foreground6": "#1155DD",
+        // "editor.bracketPairColorization.background1": "#CC1177",
+        // "editor.bracketPairColorization.background2": "#5544DD",
+        // "editor.bracketPairColorization.background3": "#CC6622",
+        // "editor.bracketPairColorization.background4": "#779428",
+        // "editor.bracketPairColorization.background5": "#009944",
+        // "editor.bracketPairColorization.background6": "#1155DD",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#eb7175",
+        "editorRuler.foreground": "#ff408133",
+        "tab.activeBorderTop": "#abb2c0",
+        "tab.lastPinnedBorder": "#1155DD"
+      },
+      "workbench.colorTheme": "Default Dark+",
+      "workbench.editor.enablePreview": false,
+      "workbench.editor.enablePreviewFromQuickOpen": false,
+      "workbench.editor.tabCloseButton": "left",
+      "workbench.iconTheme": "material-icon-theme",
+      "workbench.layoutControl.enabled": false,
+      "workbench.list.horizontalScrolling": true,
+      "workbench.list.mouseWheelScrollSensitivity": 0.25,
+      "workbench.startupEditor": "none",
+      "elixir-tools.nextls.adapter": "tcp",
+      "elixir-tools.nextls.port": 9000,
+      "editor.quickSuggestionsDelay": 1000, // Delay built in VS Code intellisense so doesn't confuse on what is Copilot
+      "editor.lightbulb.enabled": true,
+    }
+  }
+}
