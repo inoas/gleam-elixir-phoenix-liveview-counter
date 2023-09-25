@@ -5,7 +5,7 @@
     6379,
     5432
   ],
-  "postCreateCommand": "sudo apt-get update -y && sudo apt-get install -y fonts-firacode; /asdf-post-create.sh",
+  "postCreateCommand": "/asdf-post-create.sh",
   "remoteUser": "vscode",
   "features": {
     "homebrew": "latest",
